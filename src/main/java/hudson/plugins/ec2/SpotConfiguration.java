@@ -191,7 +191,7 @@ public final class SpotConfiguration extends AbstractDescribableImpl<SpotConfigu
                         Image img = CloudHelper.getAmiImage(ec2, ami);
                         if (img != null) {
                             Collection<String> productDescriptions = new ArrayList<>();
-                            productDescriptions.add(img.getPlatform() == "Windows" ? "Windows" : "Linux/UNIX");
+                            productDescriptions.add(img.getPlatform().equals("Windows" ? "Windows" : "Linux/UNIX"));
                             request.setProductDescriptions(productDescriptions);
                         }
                     }
